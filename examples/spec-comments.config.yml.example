@@ -1,0 +1,33 @@
+# MCP Spec Comments 設定ファイル例
+
+# テンプレート設定
+templates:
+  directory: "./templates"  # カスタムテンプレートのディレクトリ
+  use_defaults: true        # デフォルトテンプレートを使用するか
+
+# ルールファイル（任意）
+rules:
+  # 設計書作成時のルール
+  design_rules: "./rules/design-rules.md"
+
+  # コメント記述のルール
+  comment_rules: "./rules/comment-rules.md"
+
+  # 実装時のルール
+  implementation_rules: "./rules/implementation-rules.md"
+
+# 出力先のデフォルト設定
+output:
+  # 機能別ドキュメントの基底ディレクトリ
+  # 機能ごとに .spec-comments/{feature_name}/ 配下にファイルが作成される
+  base_directory: "./.spec-comments"
+
+  # 各フェーズのファイル名
+  requirements_filename: "requirements.md"          # 要件定義書
+  design_filename: "design.md"                      # 詳細設計書
+  implementation_log_filename: "implementation.log" # 実装ログ（将来用）
+
+# プロジェクト設定
+project:
+  root: "."          # プロジェクトルート
+  source: "./src"    # ソースコードディレクトリ

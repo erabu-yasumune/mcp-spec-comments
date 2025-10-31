@@ -1,0 +1,8 @@
+src/
+tsconfig.json
+.git/
+.gitignore
+*.log
+examples/
+.claude/
+指示書.md

@@ -1,0 +1,42 @@
+{
+  "name": "mcp-spec-comments",
+  "version": "1.0.0",
+  "description": "MCP server for spec-driven development with comment-based implementation",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "mcp-spec-comments": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "templates"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "spec",
+    "comment-driven-development",
+    "ai-development"
+  ],
+  "author": "yerabu",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.5.0",
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^20.0.0",
+    "@vitest/ui": "^3.2.4",
+    "typescript": "^5.0.0",
+    "vitest": "^3.2.4"
+  }
+}
