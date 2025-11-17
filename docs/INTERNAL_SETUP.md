@@ -59,24 +59,27 @@ project:
 
 2. Claude に以下のように依頼:
 
+**まとめて依頼**
+```
+spec comments workflowを使いたい
+新しいワークフローを初めて
+```
+
 **ステップ1: 要件定義書作成**
 ```
 pass_to_ai_for_requirements ツールを使って、
 ユーザー入力: ユーザー認証機能を持つWebアプリを作りたい
-出力先: docs/requirements.md
 ```
 
 **ステップ2: 設計書作成**
 ```
 pass_to_ai_for_design ツールを使って、
 要件定義書: docs/requirements.md
-出力先: docs/design.md
 ```
 
 **ステップ3: コメント配置**
 ```
 pass_to_ai_for_comments ツールを使って、
-設計書: docs/design.md
 ```
 
 **ステップ4: 実装**
