@@ -17,7 +17,7 @@ import {
   VerifySpecCommentsInput,
   passToAIForImplementation,
   PassToAIForImplementationInput,
-} from './tools.js';
+} from './tools/index.js';
 
 // Create MCP server
 const server = new Server(

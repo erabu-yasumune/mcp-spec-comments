@@ -1,0 +1,58 @@
+# CodeRabbit設定ファイル
+# https://docs.coderabbit.ai/reference/yaml-template
+
+---
+# 言語設定
+language: ja
+
+# レビュープロファイル（建設的だが寛容）
+profile: "chill"
+
+# レビュー設定
+reviews:
+  # プルリクエストの自動レビューを有効化
+  auto_review:
+    enabled: true
+
+  # ツール統合
+  tools:
+    biome:
+      enabled: true
+
+  # パス設定（フラットな配列、除外は ! プレフィックス）
+  path_filters:
+    - "**/*.ts"
+    - "**/*.tsx"
+    - "**/*.js"
+    - "**/*.jsx"
+    - "**/*.json"
+    - "**/*.md"
+    - "!node_modules/**"
+    - "!.next/**"
+    - "!dist/**"
+    - "!build/**"
+    - "!coverage/**"
+    - "!**/*.d.ts"
+    - "!public/**"
+    - "!.claude/**"
+
+# プロンプト設定
+prompt: |
+  あなたは、シニアエンジニアでNext.jsやTypescriptのプロフェッショナルです。
+  以下の観点でコードレビューを実施してください：
+
+  - コードの品質と保守性
+  - TypeScriptの型安全性
+  - Next.jsのベストプラクティス
+  - パフォーマンスの観点
+  - セキュリティの観点
+  - 可読性とコード構造
+
+  建設的で具体的なフィードバックを日本語で提供してください。
+
+# マージ前チェック
+pre_merge_checks:
+  title:
+    mode: "warning"
+  description:
+    mode: "off"  # PR説明は自動生成されるため

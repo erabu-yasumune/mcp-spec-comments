@@ -1,5 +1,6 @@
 import * as fs from 'fs/promises';
 import * as path from 'path';
+import { Config } from './config.js';
 
 /**
  * Read a file and return its content as a string
@@ -115,4 +116,19 @@ export async function readMultipleFiles(
     }))
   );
   return results;
+}
+
+/**
+ * Generate output path based on feature name
+ * @param config - Configuration object
+ * @param featureName - Feature name for the directory
+ * @param filename - Output filename
+ * @returns Full path to the output file
+ */
+export function generateOutputPath(
+  config: Config,
+  featureName: string,
+  filename: string
+): string {
+  return path.join(config.output.base_directory, featureName, filename);
 }
