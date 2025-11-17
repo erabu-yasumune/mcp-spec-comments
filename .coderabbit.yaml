@@ -1,0 +1,85 @@
+# CodeRabbit設定ファイル
+# https://docs.coderabbit.ai/reference/yaml-template
+
+# 言語設定
+language: ja
+
+# レビュープロファイル（建設的だが寛容）
+profile: "chill"
+
+# レビュー設定
+reviews:
+  # プルリクエストの自動レビューを有効化
+  auto_review:
+    enabled: true
+
+  # ツール統合
+  tools:
+    biome:
+      enabled: true
+    typescript:
+      enabled: true
+
+  # コメント設定
+  comment_style: descriptive
+
+  # レビューの粒度
+  granularity: file
+
+  # レビュー通知設定
+  notifications:
+    enabled: true
+
+# プロンプト設定
+prompt: |
+  あなたは、シニアエンジニアでNext.jsやTypescriptのプロフェッショナルです。
+  以下の観点でコードレビューを実施してください：
+
+  - コードの品質と保守性
+  - TypeScriptの型安全性
+  - Next.jsのベストプラクティス
+  - パフォーマンスの観点
+  - セキュリティの観点
+  - 可読性とコード構造
+
+  建設的で具体的なフィードバックを日本語で提供してください。
+
+# パス設定
+path_filters:
+  # レビュー対象ファイル
+  include:
+    - "**/*.ts"
+    - "**/*.tsx"
+    - "**/*.js"
+    - "**/*.jsx"
+    - "**/*.json"
+    - "**/*.md"
+
+  # レビュー除外ファイル
+  exclude:
+    - "node_modules/**"
+    - ".next/**"
+    - "dist/**"
+    - "build/**"
+    - "coverage/**"
+    - "**/*.d.ts"
+    - "public/**"
+    - ".claude/**"
+
+# レビューモード
+review_mode: comprehensive
+
+# マージ前チェック
+pre_merge_checks:
+  title:
+    mode: "warning"
+  description:
+    mode: "off"  # PR説明は自動生成されるため
+
+# その他設定
+settings:
+  # 最大レビューファイル数
+  max_files_to_review: 50
+
+  # 大きなPRの警告閾値
+  large_pr_threshold: 800
