@@ -1,6 +1,7 @@
 {
   "name": "mcp-spec-comments",
   "version": "1.0.0",
+  "type": "module",
   "description": "MCP server for spec-driven development with comment-based implementation",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

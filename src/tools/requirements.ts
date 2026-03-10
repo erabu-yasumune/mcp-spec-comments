@@ -1,6 +1,10 @@
 import * as path from 'path';
+import { fileURLToPath } from 'url';
 import { loadConfig } from '../config.js';
 import { readFile, readFileIfExists, generateOutputPath } from '../utils.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Tool 1: pass_to_ai_for_requirements
 export interface PassToAIForRequirementsInput {
